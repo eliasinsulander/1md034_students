@@ -9,3 +9,12 @@ body {
 .allergy {
     font-weight: bold; /* not optimal for font */
 }
+
+#burgers {
+    background-color: black;
+    color: white;
+}
+
+#customer {
+
+}
