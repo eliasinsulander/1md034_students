@@ -68,13 +68,21 @@
 	<input type="text" id="name" name="n" required="required" placeholder="För- och efternamn"/>
 	<br><br>
 	<label for="email">E-post</label><br>
-	<input type="text" id="email" name="em" required="required" placeholder="E-post adress"/>
+	<input type="email" id="email" name="em" required="required" placeholder="E-post adress"/>
 	<br><br>
 	<label for="street">Gata</label><br>
 	<input type="text" id="street" name="g" required="required" placeholder="Gatunamn"/>
 	<br><br>
 	<label for="number">Nummer</label><br>
 	<input type="number" id="number" name="nr" required="required" placeholder="Gatunummer"/>
+	<br><br>
+	<label for="payment">Betalningsmetod</label><br />
+	<select id="payment" name="p">
+          <option selected="selected">Kreditkort</option>
+          <option>Faktura</option>
+          <option>Swish</option>
+          <option>Klarna</option>
+	</select>
       </section>
     </main>
     <footer>
