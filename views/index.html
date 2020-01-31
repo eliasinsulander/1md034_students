@@ -64,38 +64,42 @@
 	<h2>Kundinformation:</h2>
 	<p>Fyll i dina uppgifter</p>
 	<h3>Leveransinformation:</h3>
-	<label for="name">Namn</label><br>
-	<input type="text" id="name" name="n" required="required" placeholder="För- och efternamn"/>
-	<br><br>
-	<label for="email">E-post</label><br>
-	<input type="email" id="email" name="em" required="required" placeholder="E-post adress"/>
-	<br><br>
-	<label for="street">Gata</label><br>
-	<input type="text" id="street" name="g" required="required" placeholder="Gatunamn"/>
-	<br><br>
-	<label for="number">Nummer</label><br>
-	<input type="number" id="number" name="nr" required="required" placeholder="Gatunummer"/>
-	<br><br>
-	<label for="payment">Betalningsmetod</label><br />
-	<select id="payment" name="p">
-          <option selected="selected">Kreditkort</option>
-          <option>Faktura</option>
-          <option>Swish</option>
-          <option>Klarna</option>
-	</select>
-	<br><br>
-	<label for="gender">Kön</label><br>
-	<input type="radio" name="gender" value="male"> Man<br>
-	<input type="radio" name="gender" value="female"> Kvinna<br>
-	<input type="radio" name="gender" value="non-binary"> Ickebinär<br>
-	<input type="radio" name="gender" value="other"> Vill ej ange
+	<form>
+	  <label for="name">Namn</label><br>
+	  <input type="text" id="name" name="n" required="required" placeholder="För- och efternamn"/>
+	  <br><br>
+	  <label for="email">E-post</label><br>
+	  <input type="email" id="email" name="em" required="required" placeholder="E-post adress"/>
+	  <br><br>
+	  <label for="street">Gata</label><br>
+	  <input type="text" id="street" name="g" required="required" placeholder="Gatunamn"/>
+	  <br><br>
+	  <label for="number">Nummer</label><br>
+	  <input type="number" id="number" name="nr" required="required" placeholder="Gatunummer"/>
+	  <br><br>
+	  <label for="payment">Betalningsmetod</label><br />
+	  <select id="payment" name="p">
+            <option selected="selected">Kreditkort</option>
+            <option>Faktura</option>
+            <option>Swish</option>
+            <option>Klarna</option>
+	  </select>
+	  <br><br>
+	  <label for="gender">Kön</label><br>
+	  <input type="radio" name="gender" value="male"> Man<br>
+	  <input type="radio" name="gender" value="female"> Kvinna<br>
+	  <input type="radio" name="gender" value="non-binary"> Ickebinär<br>
+	  <input type="radio" name="gender" value="other" checked="checked"> Vill ej ange<br>
+	  <br>
+	</form>
       </section>
+      <button type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVw4pdCYKxAGiTbNjqaBw5CDmQkQmJhuFh26SQjhGFxMLT3IXv&s" width="100"/> Skicka burgare!</button>
     </main>
     <footer>
       <hr>
       <br>
       Burger Place inc.<br>
-      Burgargatan 711
+      Burgargatan 711 Burgarborg
     </footer>
   </body>
 </html>
