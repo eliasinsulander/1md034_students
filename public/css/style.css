@@ -39,11 +39,6 @@ button {
     margin: 30px 20px;
 }
 
-#table {
-    width: 75%;
-    margin: 0 auto;
-}
-
 header {
     margin: 20px;
     height: 250px;
@@ -60,4 +55,58 @@ header {
     position: absolute;
     top: 20px;
     padding: 40px;
+}
+
+div {
+    margin: 0 auto;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 400px 400px 400px;
+}
+
+.1a {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.2a {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.3a {
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.1b {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.2b {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.3b {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.1c {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+.2c {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+.3c {
+    grid-column: 3;
+    grid-row: 3;
 }
