@@ -19,7 +19,17 @@ body {
 
 }
 
+.img {
+    display: block;
+    margin: 0 auto;
+}
+
 button:hover {
     background-color: green;
     cursor: pointer;
+}
+
+#table {
+    width: 75%;
+    margin: 0 auto;
 }
