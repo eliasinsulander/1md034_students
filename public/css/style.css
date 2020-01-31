@@ -13,14 +13,16 @@ body {
 #burgers {
     background-color: black;
     color: white;
+    border: 5px dashed white;
 }
 
 #customer {
-
+    border: 5px dashed black
 }
 
 section {
     margin: 20px;
+    padding: 10px 15px;
 }
 
 .img {
