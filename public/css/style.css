@@ -5,3 +5,7 @@ body {
     font-family: 'Martel Sans', sans-serif;
     font-size: 14pt;
 }
+
+.allergy {
+    font-weight: bold; /* not optimal for font */
+}
