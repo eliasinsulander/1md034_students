@@ -19,6 +19,10 @@ body {
 
 }
 
+section {
+    margin: 20px;
+}
+
 .img {
     display: block;
     margin: 0 auto;
@@ -27,6 +31,10 @@ body {
 button:hover {
     background-color: green;
     cursor: pointer;
+}
+
+button {
+    margin: 30px 20px;
 }
 
 #table {
