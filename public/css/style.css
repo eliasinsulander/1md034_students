@@ -46,8 +46,18 @@ button {
 
 header {
     margin: 20px;
+    height: 250px;
+    overflow: hidden;
 }
 
 #burgerHead {
     opacity: 0.5;
+    width: 100%;
+    height: auto;
+}
+
+#heading {
+    position: absolute;
+    top: 20px;
+    padding: 40px;
 }
