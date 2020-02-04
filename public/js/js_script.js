@@ -25,6 +25,8 @@ console.log( burger3.info() );
 console.log( burger4.info() );
 console.log( burger5.info() );
 
+var menu = [burger1, burger2, burger3, burger4, burger5]
+
 let ID = document.getElementById("myID");
 
 let maktig = document.createElement('p');
@@ -46,3 +48,17 @@ ID.appendChild(liten);
 let toast = document.createElement('p');
 toast.innerHTML = burger5.info();
 ID.appendChild(toast);
+
+for (i = 0; i < 5; i++) {
+    let burger = document.createElement('p');
+    burger.innerHTML = menu[i].info();
+    if (true) {
+  	let gluten = document.createElement('p');
+  	gluten.innerHTML = menu[i].gluten;
+	burger.appendChild(gluten);
+	let lactose = document.createElement('p');
+  	lactose.innerHTML = menu[i].lactose;
+	burger.appendChild(lactose);
+    }
+    ID.appendChild(burger);
+}
