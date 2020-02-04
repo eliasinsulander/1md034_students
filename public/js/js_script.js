@@ -24,3 +24,25 @@ console.log( burger2.info() );
 console.log( burger3.info() );
 console.log( burger4.info() );
 console.log( burger5.info() );
+
+let ID = document.getElementById("myID");
+
+let maktig = document.createElement('p');
+maktig.innerHTML = burger1.info();
+ID.appendChild(maktig);
+
+let sjaskig = document.createElement('p');
+sjaskig.innerHTML = burger2.info();
+ID.appendChild(sjaskig);
+
+let ny = document.createElement('p');
+ny.innerHTML = burger3.info();
+ID.appendChild(ny);
+
+let liten = document.createElement('p');
+liten.innerHTML = burger4.info();
+ID.appendChild(liten);
+
+let toast = document.createElement('p');
+toast.innerHTML = burger5.info();
+ID.appendChild(toast);
