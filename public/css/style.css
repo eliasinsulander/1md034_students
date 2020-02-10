@@ -63,50 +63,25 @@ div {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 400px 400px 400px;
+    grid-template-columns: 250px 250px 250px 250px 250px;
 }
 
-.1a {
+.a {
     grid-column: 1;
-    grid-row: 1;
 }
 
-.2a {
+.b {
     grid-column: 2;
-    grid-row: 1;
 }
 
-.3a {
+.c {
     grid-column: 3;
-    grid-row: 1;
 }
 
-.1b {
-    grid-column: 1;
-    grid-row: 2;
+.d {
+    grid-column: 4;
 }
 
-.2b {
-    grid-column: 2;
-    grid-row: 2;
-}
-
-.3b {
-    grid-column: 3;
-    grid-row: 2;
-}
-
-.1c {
-    grid-column: 1;
-    grid-row: 3;
-}
-
-.2c {
-    grid-column: 2;
-    grid-row: 3;
-}
-
-.3c {
-    grid-column: 3;
-    grid-row: 3;
+.e {
+    grid-column: 5;
 }

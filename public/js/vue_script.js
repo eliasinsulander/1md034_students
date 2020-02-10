@@ -1,3 +1,4 @@
+/*
 const vm = new Vue({
     el: '#myID',
     data: {
@@ -8,3 +9,4 @@ const vm = new Vue({
 	burger5: burger5.info()
     }
 })
+*/
