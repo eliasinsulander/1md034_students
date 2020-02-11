@@ -21,6 +21,7 @@ let burger5 = new menuItem('Toast', '2000 kCal', 'Glutenfri', 'Laktosfri', 'http
 
 var menu = [burger1, burger2, burger3, burger4, burger5]
 
+/*
 //mäktig burgare
 let maktig = document.getElementById("a");
 
@@ -28,7 +29,7 @@ let mName = document.createElement('h3');
 mName.innerHTML = burger1.name;
 let mImg = document.createElement('img');
 mImg.src = burger1.img;
-mImg.width = "200";    
+mImg.width = "200";
 
 let mInfo = document.createElement('ul');
 let mKcal = document.createElement('li');
@@ -146,6 +147,7 @@ toast.appendChild(tName);
 toast.appendChild(tImg);
 toast.appendChild(tInfo);
 
+*/
 
 /*
 

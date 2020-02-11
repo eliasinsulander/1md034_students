@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <header>
-    <img id="burgerHead" src="https://www.freewpheaders.com/wp-content/gallery/food-gallery/burger-sandwich-header.jpg" alt="header" title="header">  
+    <img id="burgerHead" src="https://www.freewpheaders.com/wp-content/gallery/food-gallery/burger-sandwich-header.jpg" alt="header" title="header">
     <h1 id="heading">Välkommen till Burger Place!</h1>
     <title>Burger Place</title>
     <meta charset="utf-8"/>
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/js_script.js" defer></script>
-    <script src="js/vue_script.js"></script>
     <script src="https://vuejs.org/js/vue.js"></script>
+    <script src="js/vue_script.js"></script>
   </header>
   <body>
     <main>
@@ -16,12 +16,52 @@
 	<h2>Välj burgare!</h2>
 	<p>Välj en burgare du är sugen på</p>
 	<div class="wrapper">
-	  <div id="a"></div>
-	  <div id="b"></div>
-	  <div id="c"></div>
-	  <div id="d"></div>
-	  <div id="e"></div>
-	</div>    
+	  <div id="a">
+	    <h3>{{mName}}</h3>
+	    <img v-bind:src="mImg" width="200">
+	    <ul>
+	      <li>{{mKcal}}</li>
+	      <li>{{mGlu}}</li>
+	      <li>{{mLac}}</li>
+	    </ul>
+	  </div>
+	  <div id="b">
+      <h3>{{sName}}</h3>
+      <img v-bind:src="sImg" width="200">
+      <ul>
+        <li>{{sKcal}}</li>
+        <li>{{sGlu}}</li>
+        <li>{{sLac}}</li>
+      </ul>
+    </div>
+	  <div id="c">
+      <h3>{{nName}}</h3>
+      <img v-bind:src="nImg" width="200">
+      <ul>
+        <li>{{nKcal}}</li>
+        <li>{{nGlu}}</li>
+        <li>{{nLac}}</li>
+      </ul>
+    </div>
+	  <div id="d">
+      <h3>{{lName}}</h3>
+      <img v-bind:src="lImg" width="200">
+      <ul>
+        <li>{{lKcal}}</li>
+        <li>{{lGlu}}</li>
+        <li>{{lLac}}</li>
+      </ul>
+    </div>
+	  <div id="e">
+      <h3>{{tName}}</h3>
+      <img v-bind:src="tImg" width="200">
+      <ul>
+        <li>{{tKcal}}</li>
+        <li>{{tGlu}}</li>
+        <li>{{tLac}}</li>
+      </ul>
+    </div>
+	</div>
       </section>
       <section id="customer">
 	<h2>Kundinformation:</h2>
