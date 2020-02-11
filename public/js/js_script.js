@@ -1,3 +1,4 @@
+/*
 function menuItem(name, kcal, g, l, img) {
     this.name = name;
     this.kcal = kcal;
@@ -20,6 +21,7 @@ let burger4 = new menuItem('Liten Burgare', '20 kCal', 'Glutenfylld', 'Laktosfyl
 let burger5 = new menuItem('Toast', '2000 kCal', 'Glutenfri', 'Laktosfri', 'https://food-images.files.bbci.co.uk/food/recipes/savoury_french_toast_44950_16x9.jpg');
 
 var menu = [burger1, burger2, burger3, burger4, burger5]
+*/
 
 /*
 //mäktig burgare
