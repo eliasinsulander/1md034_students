@@ -12,7 +12,7 @@
     <script src="js/vue_script.js"></script>
   </header>
   <body>
-    <main>
+    <main id="main">
       <section id="burgers">
 	<h2>Välj burgare!</h2>
 	<p>Välj en burgare du är sugen på</p>
@@ -25,6 +25,8 @@
 	      <li>{{mGlu}}</li>
 	      <li>{{mLac}}</li>
 	    </ul>
+      <input type="checkbox" id="maktig" value="mäktig"></input>
+      <label for="maktig">Beställ</label>
 	  </div>
 	  <div id="b">
       <h3>{{sName}}</h3>
@@ -33,6 +35,8 @@
         <li>{{sKcal}}</li>
         <li>{{sGlu}}</li>
         <li>{{sLac}}</li>
+        <input type="checkbox" id="sjaskig" value="sjaskig"></input>
+        <label for="sjaskig">Beställ</label>
       </ul>
     </div>
 	  <div id="c">
@@ -43,6 +47,8 @@
         <li>{{nGlu}}</li>
         <li>{{nLac}}</li>
       </ul>
+      <input type="checkbox" id="ny" value="ny"></input>
+      <label for="ny">Beställ</label>
     </div>
 	  <div id="d">
       <h3>{{lName}}</h3>
@@ -52,6 +58,8 @@
         <li>{{lGlu}}</li>
         <li>{{lLac}}</li>
       </ul>
+      <input type="checkbox" id="liten" value="liten"></input>
+      <label for="liten">Beställ</label>
     </div>
 	  <div id="e">
       <h3>{{tName}}</h3>
@@ -60,6 +68,8 @@
         <li>{{tKcal}}</li>
         <li>{{tGlu}}</li>
         <li>{{tLac}}</li>
+        <input type="checkbox" id="toast" value="toast"></input>
+        <label for="toast">Beställ</label>
       </ul>
     </div>
 	</div>
@@ -68,21 +78,21 @@
 	<h2>Kundinformation:</h2>
 	<p>Fyll i dina uppgifter</p>
 	<h3>Leveransinformation:</h3>
-	<form>
+	<form id="form">
 	  <label for="name">Namn</label><br>
-	  <input type="text" id="name" name="n" required="required" placeholder="För- och efternamn"/>
+	  <input type="text" id="name" v-model="name" name="n" required="required" placeholder="För- och efternamn"/>
 	  <br><br>
 	  <label for="email">E-post</label><br>
-	  <input type="email" id="email" name="em" required="required" placeholder="E-post adress"/>
+	  <input type="email" id="email" v-model="email" name="em" required="required" placeholder="E-post adress"/>
 	  <br><br>
 	  <label for="street">Gata</label><br>
-	  <input type="text" id="street" name="g" required="required" placeholder="Gatunamn"/>
+	  <input type="text" id="street" v-model="street" name="g" required="required" placeholder="Gatunamn"/>
 	  <br><br>
 	  <label for="number">Nummer</label><br>
-	  <input type="number" id="number" name="nr" required="required" placeholder="Gatunummer"/>
+	  <input type="number" id="number" v-model="number" name="nr" required="required" placeholder="Gatunummer"/>
 	  <br><br>
 	  <label for="payment">Betalningsmetod</label><br />
-	  <select id="payment" name="p">
+	  <select id="payment" v-model="payment" name="p">
             <option selected="selected">Kreditkort</option>
             <option>Faktura</option>
             <option>Swish</option>
@@ -90,14 +100,26 @@
 	  </select>
 	  <br><br>
 	  <label for="gender">Kön</label><br>
-	  <input type="radio" name="gender" value="male"> Man<br>
-	  <input type="radio" name="gender" value="female"> Kvinna<br>
-	  <input type="radio" name="gender" value="non-binary"> Ickebinär<br>
-	  <input type="radio" name="gender" value="other" checked="checked"> Vill ej ange<br>
+	  <input id="male" type="radio" name="gender" value="Man" v-model="gender"> Man<br>
+	  <input id="female" type="radio" name="gender" value="Kvinna" v-model="gender"> Kvinna<br>
+	  <input id="nb" type="radio" name="gender" value="Ickebinär" v-model="gender"> Ickebinär<br>
+	  <input id="other" type="radio" name="gender" value="Vill ej ange" checked="checked" v-model="gender"> Vill ej ange<br>
 	  <br>
 	</form>
       </section>
-      <button type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVw4pdCYKxAGiTbNjqaBw5CDmQkQmJhuFh26SQjhGFxMLT3IXv&s" width="100"/> Skicka burgare!</button>
+      <div id="order">
+        <button id="button" v-on:click="markDone" type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVw4pdCYKxAGiTbNjqaBw5CDmQkQmJhuFh26SQjhGFxMLT3IXv&s" width="100"/> Skicka burgare!</button>
+        <p>{{oBurger1}}</p>
+        <p>{{oBurger2}}</p>
+        <p>{{oBurger3}}</p>
+        <p>{{oBurger4}}</p>
+        <p>{{oBurger5}}</p>
+        <p>{{oName}}</p>
+        <p>{{oEmail}}</p>
+        <p>{{oStreet}} {{oNumber}}</p>
+        <p>{{oPayment}}</p>
+        <p>{{oGender}}</p>
+      </div>
     </main>
     <footer>
       <hr>
