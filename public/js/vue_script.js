@@ -136,7 +136,8 @@ window.onload = function(){
             x: vm.details.x,
             y: vm.details.y,
           },
-          orderItems: [this.oBurger1, this.oBurger2, this.oBurger3, this.oBurger4, this.oBurger5]
+          orderItems: [this.oBurger1, this.oBurger2, this.oBurger3, this.oBurger4, this.oBurger5],
+          custInfo: [this.oName, this.oEmail, this.oPayment, this.oGender],
         });
       },
       getNext: function() {
