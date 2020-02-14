@@ -1,5 +1,34 @@
 window.onload = function(){
 
+  'use strict';
+  const socket = io();
+
+  /* eslint-disable-next-line no-unused-vars */
+  const vm = new Vue({
+    el: '#dots',
+    data: {
+      orders: {},
+      details: {x:0, y:0},
+    },
+    methods: {
+      displayOrder: function(event) {
+        /* When you click in the map, a click event object is sent as parameter
+         * to the function designated in v-on:click (i.e. this one).
+         * The click event object contains among other things different
+         * coordinates that we need when calculating where in the map the click
+         * actually happened. */
+        let offset = {
+          x: event.currentTarget.getBoundingClientRect().left,
+          y: event.currentTarget.getBoundingClientRect().top,
+        };
+        this.details = {
+          x: event.clientX - 10 - offset.x,
+          y: event.clientY - 10 - offset.y,
+        };
+      },
+    },
+  });
+
   const vm1 = new Vue({
     el: '.wrapper',
     data: {
@@ -43,8 +72,6 @@ window.onload = function(){
     data: {
       name: "",
       email: "",
-      street: "",
-      number: "",
       payment: "",
       gender: ""
     }
@@ -55,22 +82,19 @@ window.onload = function(){
     data: {
       oName: "",
       oEmail: "",
-      oStreet: "",
-      oNumber: "",
       oPayment: "",
       oGender: "",
       oBurger1: "",
       oBurger2: "",
       oBurger3: "",
       oBurger4: "",
-      oBurger5: ""
+      oBurger5: "",
+      counter: 0,
     },
     methods: {
-      markDone: function info(){
+      markDone: function (){
         vm3.oName = vm2.name;
         vm3.oEmail = vm2.email;
-        vm3.oStreet = vm2.street;
-        vm3.oNumber = vm2.number;
         vm3.oPayment = vm2.payment;
         vm3.oGender = vm2.gender;
 
@@ -78,31 +102,53 @@ window.onload = function(){
           vm3.oBurger1 = "Mäktig Burgare";
         } else {
           vm3.oBurger1 = "";
-        };
+        }
         if (document.getElementById("sjaskig").checked) {
           vm3.oBurger2 = "Sjaskig Burgare";
         } else {
           vm3.oBurger2 = "";
-        };
+        }
         if (document.getElementById("ny").checked) {
           vm3.oBurger3 = "Nyburgare";
         } else {
           vm3.oBurger3 = "";
-        };
+        }
         if (document.getElementById("liten").checked) {
           vm3.oBurger4 = "Liten Burgare";
         } else {
           vm3.oBurger4 = "";
-        };
+        }
         if (document.getElementById("toast").checked) {
           vm3.oBurger5 = "Toast";
         } else {
           vm3.oBurger5 = "";
-        };
-      }
+        }
+      },
+      addOrder: function(event) {
+        /* When you click in the map, a click event object is sent as parameter
+         * to the function designated in v-on:click (i.e. this one).
+         * The click event object contains among other things different
+         * coordinates that we need when calculating where in the map the click
+         * actually happened. */
+        socket.emit('addOrder', {
+          orderId: this.getNext(),
+          details: {
+            x: vm.details.x,
+            y: vm.details.y,
+          },
+          orderItems: [this.oBurger1, this.oBurger2, this.oBurger3, this.oBurger4, this.oBurger5]
+        });
+      },
+      getNext: function() {
+        /* This function returns the next available key (order number) in
+         * the orders object, it works under the assumptions that all keys
+         * are integers. */
+
+        this.counter++;
+        return this.counter;
+      },
     }
   });
-
 
 }
 /*

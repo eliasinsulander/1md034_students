@@ -5,11 +5,14 @@
     <h1 id="heading">Välkommen till Burger Place!</h1>
     <title>Burger Place</title>
     <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <script type="text/javascript" src="js/menu.js"></script>
+    <link rel="stylesheet" href="css/deli-very.css">
+    <script type="text/javascript" src="js/menu.js" defer></script>
     <script src="js/js_script.js" defer></script>
-    <script src="https://vuejs.org/js/vue.js"></script>
-    <script src="js/vue_script.js"></script>
+    <script src="https://vuejs.org/js/vue.js" defer></script>
+    <script src="js/vue_script.js" defer></script>
+    <script src="/socket.io/socket.io.js" defer></script>
   </header>
   <body>
     <main id="main">
@@ -85,12 +88,6 @@
 	  <label for="email">E-post</label><br>
 	  <input type="email" id="email" v-model="email" name="em" required="required" placeholder="E-post adress"/>
 	  <br><br>
-	  <label for="street">Gata</label><br>
-	  <input type="text" id="street" v-model="street" name="g" required="required" placeholder="Gatunamn"/>
-	  <br><br>
-	  <label for="number">Nummer</label><br>
-	  <input type="number" id="number" v-model="number" name="nr" required="required" placeholder="Gatunummer"/>
-	  <br><br>
 	  <label for="payment">Betalningsmetod</label><br />
 	  <select id="payment" v-model="payment" name="p">
             <option selected="selected">Kreditkort</option>
@@ -106,9 +103,19 @@
 	  <input id="other" type="radio" name="gender" value="Vill ej ange" checked="checked" v-model="gender"> Vill ej ange<br>
 	  <br>
 	</form>
+  <h1> Klicka på kartan! </h1>
+  <a href="/dispatcher" target="_blank">Öppna dispatcher i nytt fönster</a>.
+  <div class="view-box">
+    <div id="dots" v-on:click="displayOrder">
+        <div
+          v-bind:style="{ left: details.x + 'px', top: details.y + 'px'}">
+          {{"T"}}
+        </div>
+    </div>
+  </div>
       </section>
       <div id="order">
-        <button id="button" v-on:click="markDone" type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVw4pdCYKxAGiTbNjqaBw5CDmQkQmJhuFh26SQjhGFxMLT3IXv&s" width="100"/> Skicka burgare!</button>
+        <button v-on:click="markDone();addOrder()" type="submit"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVw4pdCYKxAGiTbNjqaBw5CDmQkQmJhuFh26SQjhGFxMLT3IXv&s" width="100"/> Skicka burgare!</button>
         <p>{{oBurger1}}</p>
         <p>{{oBurger2}}</p>
         <p>{{oBurger3}}</p>
@@ -116,7 +123,6 @@
         <p>{{oBurger5}}</p>
         <p>{{oName}}</p>
         <p>{{oEmail}}</p>
-        <p>{{oStreet}} {{oNumber}}</p>
         <p>{{oPayment}}</p>
         <p>{{oGender}}</p>
       </div>
